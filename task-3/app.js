@@ -1,13 +1,13 @@
 function append_task(list, text) {
-    var task_list = $('<li>');
-    task_list.append($('<span>' + text + '</span>'));
+    var task_li = $('<li>');
+    task_li.append($('<span>'+ text + '</span>'));
 
-    var button = $('<button id="delete_button">Удалить</button>');
+    var button = $('<button id="del-button">Удалить</button>');
     button.click(function () {
         $(this).parent().remove()
     });
-    task_list.append(button);
-    list.append(task_list);
+    task_li.append(button);
+    list.append(task_li);
 }
 
 $(function() {
@@ -16,12 +16,11 @@ $(function() {
 
     $('#root').append(my_list);
 
-    var task_input = $('<input id="task_input" type="text" >');
-    var task_button = $('<button id="add_task">Добавить задание</button>');
-    task_button.click(function () {
-        append_task(my_list, task_input.val())
+    var add_task_input = $('<input id="add_task_input" type="text" >');
+    var add_task_button = $('<button id="add_task">Добавить задание</button>');
+    add_task_button.click(function () {
+        append_task(my_list, add_task_input.val())
     });
-
-    $('#root').append(task_input);
-    $('#root').append(task_button);
+    $('#root').append(add_task_input);
+    $('#root').append(add_task_button);
 });
