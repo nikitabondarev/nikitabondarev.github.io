@@ -1,0 +1,4 @@
+# JetBrain's IDE'as files
+*.iml
+.idea
+out
